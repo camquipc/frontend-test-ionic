@@ -11,7 +11,7 @@ Esta es una prueba técnica para evaluar tus habilidades en Angular e Ionic. El 
 ## Clonar repositorio
 
 ```bash
-   git clone [https://tu-repositorio.git](https://tu-repositorio.git)
+   git clone [https://github.com/camquipc/frontend-test-ionic.git](https://github.com/camquipc/frontend-test-ionic.git)
 ```
 
 ## Instalar dependencias 
