@@ -38,3 +38,5 @@ const environment = {
 ```bash
 ionic serve 
 ```
+
+NOTA: actualizar el apiKey:'fa8bd36ecb1d4e43bc0952504a138576' ya que es valido.
