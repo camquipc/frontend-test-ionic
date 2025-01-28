@@ -21,7 +21,6 @@ import { Router } from '@angular/router';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class UserPage implements OnInit {
-[x: string]: any;
 
   public isLoading = true;
   public users: UserInterface[] = [];

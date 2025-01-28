@@ -11,10 +11,8 @@
     <ion-list>
       <ion-card *ngFor="let user of users; let index = index" (click)="showDetails(user.Id)">
         <ion-card-content class="card-no-padding-bookings">
-      
-               <h6><strong>Usuario: </strong> {{ user.FirstName }} {{ user.LastName }}  </h6>
-               <h6><strong>Dirección: </strong> {{ user.Address }}</h6> 
-
+          <h6><strong>Usuario: </strong> {{ user.FirstName }} {{ user.LastName }}  </h6>
+          <h6><strong>Dirección: </strong> {{ user.Address }}</h6> 
           </ion-card-content>
       </ion-card>
     </ion-list>
