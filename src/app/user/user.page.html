@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Lista de Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner *ngIf="isLoading"></ion-spinner>
+
+  <ng-container *ngIf="!isLoading">
+    <ion-list>
+      <ion-card *ngFor="let user of users; let index = index" (click)="showDetails(user.Id)">
+        <ion-card-content class="card-no-padding-bookings">
+      
+               <h6><strong>Usuario: </strong> {{ user.FirstName }} {{ user.LastName }}  </h6>
+               <h6><strong>Dirección: </strong> {{ user.Address }}</h6> 
+
+          </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+    <ion-card *ngIf="users.length === 0 && !isLoading">
+      <ion-card-content>
+        <p>Sin resultados</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+</ion-content>
+
+
+
+

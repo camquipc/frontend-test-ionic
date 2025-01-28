@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Tutores</ion-title>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="specialtys?.length === 0">
+    <ion-item class="select-item-container">
+      <ion-select
+        class="select-item"
+        interface="popover"
+        toggleIcon="add"
+        expandedIcon="remove"
+        label="Filtrar por especialidad"
+        placeholder="Seleccionar especialidad"
+        (ionChange)="filterTutors($event.detail.value)"
+      >
+        <ion-select-option value="all">Todos</ion-select-option>
+        <ion-select-option *ngFor="let specialty of specialtys" [value]="specialty.specialty">
+          {{ specialty.specialty }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-spinner *ngIf="isLoading"></ion-spinner>
+
+  <ng-container *ngIf="!isLoading">
+    <ion-list>
+      <ion-card *ngFor="let item of filteredItems; let index = index">
+        <ion-card-content class="card-no-padding-bookings">
+          <h6><strong>Tutor:</strong> {{ item.FirstName }} {{ item.LastName }}  </h6>
+          <h6><strong>Especialidad:</strong> {{ item.Speciality }}</h6>
+          <p>
+            <strong>Email:</strong> {{ item.Email }}
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  
+    <ion-card *ngIf="filteredItems.length === 0 && !isLoading">
+      <ion-card-content>
+        <p>Sin resultados</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+</ion-content>
+
+
