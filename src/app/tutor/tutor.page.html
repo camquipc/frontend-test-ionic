@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>Lista de Tutores</ion-title>
   </ion-toolbar>
-  <ion-toolbar >
+  <ion-toolbar *ngIf="filteredItems?.length !==0 && !isLoading">
     <ion-item class="select-item-container">
       <ion-select
         class="select-item"
