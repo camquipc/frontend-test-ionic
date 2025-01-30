@@ -4,7 +4,7 @@
     <ion-title>Lista de Reservas</ion-title>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar placeholder="Usuario " [debounce]="1000" (ionInput)="searchBookingForUser($event)"></ion-searchbar>
+    <ion-searchbar placeholder="Buscar por usuario " [debounce]="1000" (ionInput)="searchBookingForUser($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
@@ -16,7 +16,7 @@
     <ion-list>
       <ion-card *ngFor="let item of searchBooking; let index = index" >
         <ion-card-content class="card-no-padding-bookings">
-        <h3><strong>Reserva ID:</strong> {{ item.id }}</h3>
+        <p><strong>Reserva ID:</strong> {{ item.id }}</p>
         <h3><strong>Usuario:</strong> {{ item.StudentId.FirstName }} {{ item.StudentId.LastName }} </h3>     
         <h3><strong>Tutor:</strong> {{ item.TutorId.FirstName }} {{ item.TutorId.LastName }}</h3>
         <p><b>Inicio:</b> {{ item.StartTime | date:'dd/MM/yyyy' }}  <b>Final:</b> {{ item.EndTime | date:'dd/MM/yyyy' }}</p>

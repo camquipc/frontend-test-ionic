@@ -28,7 +28,7 @@ export class TutorPage implements OnInit {
 
   ngOnInit() {
     this.getTutors();
-    this.getFilterOptionTutors();
+    
   }
 
   getTutors(): void {
@@ -36,7 +36,9 @@ export class TutorPage implements OnInit {
       next: (res) => {
         this.items = res;
         this.filteredItems = res;
+        this.getFilterOptionTutors();
         this.isLoading = false;
+        console.log('Tutors:', this.items);
       },
       error: (err) => {
         this.isLoading = false; 
@@ -61,6 +63,7 @@ export class TutorPage implements OnInit {
       return [];
     }
     const uniqueSpecialties = new Set(this.items.map((item: TutorInterface) => item.Speciality));
+    console.log('Specialties:', uniqueSpecialties);
     return this.specialtys = Array.from(uniqueSpecialties).map((specialty) => ({ specialty }));
   }
 
